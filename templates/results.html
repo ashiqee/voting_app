@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <a href="/" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Upload more images</a>
+
+    
+    <div class="mt-4">
+        <h3 class="text-xl font-bold mb-4">ভোট গণনা ফলাফল</h3>
+        <table class="min-w-full bg-white  border border-gray-200">
+            <thead>
+                <tr>
+                    <th class="py-2 border px-2 text-left">ব্যালট নং</th>
+                    <th class="py-2 border px-2 text-left">প্রতীক</th>
+                    <th class="py-2 border px-2 text-left">ভোট গণনা</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for block_num in range(1, 19) %}
+                    <tr class="px-4 bg-blue-500/15">
+                        <td class="py-2 text-xl border px-2">{{ block_num }}</td>
+                        <td class="py-2 border px-2">
+                            <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" style="width: 40px; height: 40px;">
+                        </td>
+                        <td class="py-2 text-2xl text-center font-bold border px-2">{{ black_counts[block_num] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <h1 class="text-3xl font-bold mb-4">Processed Images</h1>
+    <ul class="grid grid-cols-4 gap-4 mb-6">
+        {% for image in images %}
+            <li class="bg-white p-4 rounded-lg shadow">
+                <img src="{{ url_for('serve_image', filename=image) }}" alt="{{ image }}" class="max-w-full rounded">
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- <h2 class="text-2xl font-bold mb-4">CSV Classification Results</h2>
+    <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+            <tr>
+                <th class="py-2 border-b text-left">Image Name</th>
+                <th class="py-2 border-b text-left">Block Number</th>
+                <th class="py-2 border-b text-left">Classification</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in csv_data %}
+                <tr>
+                    <td class="py-2 border-b">{{ row[0] }}</td>
+                    <td class="py-2 border-b">{{ row[1] }}</td>
+                    <td class="py-2 border-b">{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> -->
+
+   
+</body>
+</html>
