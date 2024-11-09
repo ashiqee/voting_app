@@ -9,8 +9,22 @@
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
     <a href="/" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Upload more images</a>
 
-    
-    <div class="mt-4">
+    <div class="mt-10">
+        <h3 class="text-xl font-bold mb-4">ভোট গণনা ফলাফল</h3>
+        <ul class="grid grid-cols-9 my-10 gap-4 mb-6">
+            {% for block_num in range(1, 19) %}
+                <li class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="py-2 text-center rounded-t-md text-xl font-bold border px-2">ব্যালট নং {{ block_num }}</h3>
+                    <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" style="width: 140px; height: 140px;">
+                    <h2 class="py-2 text-7xl text-green-500 text-center font-bold  px-2">{{ black_counts[block_num] }}</h2>
+                </li>
+            {% endfor %}
+        </ul>
+
+                  
+    </div>
+
+    <!-- <div class="mt-4">
         <h3 class="text-xl font-bold mb-4">ভোট গণনা ফলাফল</h3>
         <table class="min-w-full bg-white  border border-gray-200">
             <thead>
@@ -32,13 +46,17 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
+    </div> -->
 
     <h1 class="text-3xl font-bold mb-4">Processed Images</h1>
     <ul class="grid grid-cols-4 gap-4 mb-6">
         {% for image in images %}
-            <li class="bg-white p-4 rounded-lg shadow">
-                <img src="{{ url_for('serve_image', filename=image) }}" alt="{{ image }}" class="max-w-full rounded">
+            <li class="relative bg-white p-4 rounded-lg shadow">
+                <!-- Count label at the top of the image -->
+                <span class="absolute top-2 left-2 bg-blue-500 text-white text-xl font-bold px-10 py-10 rounded-full z-10">
+                    {{ loop.index }}
+                </span>
+                <img src="{{ url_for('serve_image', filename=image) }}" alt="{{ image }}" class="max-w-full rounded mt-2">
             </li>
         {% endfor %}
     </ul>
