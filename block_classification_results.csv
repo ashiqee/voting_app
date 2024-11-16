@@ -1,38 +1,28 @@
 Image Name,Block Number,Classification
-voted_valot - Copy (4).bmp,1,Black
-voted_valot - Copy (4).bmp,2,White
-voted_valot - Copy (4).bmp,3,White
-voted_valot - Copy (4).bmp,4,White
-voted_valot - Copy (4).bmp,5,White
-voted_valot - Copy (4).bmp,6,Black
-voted_valot - Copy (4).bmp,7,White
-voted_valot - Copy (4).bmp,8,Black
-voted_valot - Copy (4).bmp,9,White
-voted_valot - Copy (4).bmp,10,Black
-voted_valot - Copy (4).bmp,11,Black
-voted_valot - Copy (4).bmp,12,White
-voted_valot - Copy (4).bmp,13,White
-voted_valot - Copy (4).bmp,14,Black
-voted_valot - Copy (4).bmp,15,White
-voted_valot - Copy (4).bmp,16,Black
-voted_valot - Copy (4).bmp,17,White
-voted_valot - Copy (4).bmp,18,Black
+Ballot_paper_test copy.bmp,1,White
+Ballot_paper_test copy.bmp,2,Black
+Ballot_paper_test copy.bmp,3,White
+Ballot_paper_test copy.bmp,4,Black
+Ballot_paper_test copy.bmp,5,Black
+Ballot_paper_test copy.bmp,6,White
 Image Name,Block Number,Classification
-ballot_2ndTest.bmp,1,White
-ballot_2ndTest.bmp,2,Black
-ballot_2ndTest.bmp,3,White
-ballot_2ndTest.bmp,4,White
-ballot_2ndTest.bmp,5,White
-ballot_2ndTest.bmp,6,Black
-ballot_2ndTest.bmp,7,White
-ballot_2ndTest.bmp,8,Black
-ballot_2ndTest.bmp,9,White
-ballot_2ndTest.bmp,10,White
-ballot_2ndTest.bmp,11,White
-ballot_2ndTest.bmp,12,Black
-ballot_2ndTest.bmp,13,White
-ballot_2ndTest.bmp,14,White
-ballot_2ndTest.bmp,15,White
-ballot_2ndTest.bmp,16,Black
-ballot_2ndTest.bmp,17,White
-ballot_2ndTest.bmp,18,Black
+Ballot_paper_test.png,1,White
+Ballot_paper_test.png,2,Black
+Ballot_paper_test.png,3,White
+Ballot_paper_test.png,4,Black
+Ballot_paper_test.png,5,Black
+Ballot_paper_test.png,6,White
+Image Name,Block Number,Classification
+Gray_mistake.bmp,1,Black
+Gray_mistake.bmp,2,Black
+Gray_mistake.bmp,3,White
+Gray_mistake.bmp,4,Black
+Gray_mistake.bmp,5,Black
+Gray_mistake.bmp,6,Black
+Image Name,Block Number,Classification
+Screenshot 2024-11-16 145349.png,1,White
+Screenshot 2024-11-16 145349.png,2,White
+Screenshot 2024-11-16 145349.png,3,White
+Screenshot 2024-11-16 145349.png,4,White
+Screenshot 2024-11-16 145349.png,5,White
+Screenshot 2024-11-16 145349.png,6,White

@@ -6,81 +6,76 @@
     <title>Processed Images</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
-    <a href="/" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Upload more images</a>
+<body class="bg-gray-100 flex flex-col items-center justify-center ">
+    <main class="min-h-screen flex flex-col items-center justify-center">
 
-    <div class="mt-10">
-        <h3 class="text-xl font-bold mb-4">ভোট গণনা ফলাফল</h3>
-        <ul class="grid grid-cols-9 my-10 gap-4 mb-6">
-            {% for block_num in range(1, 19) %}
+        <a href="/" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Upload more images</a>
+
+    <h3 class="text-xl my-5 font-bold mb-4">ভোট গণনা ফলাফল</h3>
+   <section class="grid grid-cols-3 gap-10 justify-between">
+    <!-- সভাপতি (১টি) -->
+    <div class="mt-10 bg-gray-300 p-10 rounded-lg text-center">
+        <!-- Grid for 6 blocks -->
+        <h3 class="text-xl font-bold mb-4">সভাপতি (১টি)</h3>
+        <ul class="grid grid-cols-2 gap-6 my-4">
+            {% for block_num in range(1, 3) %}
                 <li class="bg-white p-4 rounded-lg shadow">
                     <h3 class="py-2 text-center rounded-t-md text-xl font-bold border px-2">ব্যালট নং {{ block_num }}</h3>
-                    <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" style="width: 140px; height: 140px;">
-                    <h2 class="py-2 text-7xl text-green-500 text-center font-bold  px-2">{{ black_counts[block_num] }}</h2>
+                    <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" class="w-36 h-36 mx-auto my-2">
+                    <h2 class="py-2 text-3xl text-green-500 text-center font-bold px-2">{{ black_counts[block_num] }}</h2>
                 </li>
             {% endfor %}
         </ul>
-
-                  
     </div>
 
-    <!-- <div class="mt-4">
-        <h3 class="text-xl font-bold mb-4">ভোট গণনা ফলাফল</h3>
-        <table class="min-w-full bg-white  border border-gray-200">
-            <thead>
-                <tr>
-                    <th class="py-2 border px-2 text-left">ব্যালট নং</th>
-                    <th class="py-2 border px-2 text-left">প্রতীক</th>
-                    <th class="py-2 border px-2 text-left">ভোট গণনা</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for block_num in range(1, 19) %}
-                    <tr class="px-4 bg-blue-500/15">
-                        <td class="py-2 text-xl border px-2">{{ block_num }}</td>
-                        <td class="py-2 border px-2">
-                            <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" style="width: 40px; height: 40px;">
-                        </td>
-                        <td class="py-2 text-2xl text-center font-bold border px-2">{{ black_counts[block_num] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div> -->
 
-    <h1 class="text-3xl font-bold mb-4">Processed Images</h1>
+     <!-- সভাপতি (১টি) -->
+     <div class="mt-10 bg-gray-300 p-10 rounded-lg text-center">
+        <!-- Grid for 6 blocks -->
+        <h3 class="text-xl font-bold mb-4">সিনি. সহ-সভাপতি (১টি)</h3>
+        <ul class="grid grid-cols-2 gap-6 my-4">
+            {% for block_num in range(3, 5) %}
+                <li class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="py-2 text-center rounded-t-md text-xl font-bold border px-2">ব্যালট নং {{ block_num }}</h3>
+                    <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" class="w-36 h-36 mx-auto my-2">
+                    <h2 class="py-2 text-3xl text-green-500 text-center font-bold px-2">{{ black_counts[block_num] }}</h2>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+     <!-- সভাপতি (১টি) -->
+     <div class="mt-10 bg-gray-300 p-10 rounded-lg text-center">
+        <!-- Grid for 6 blocks --> 
+        <h3 class="text-xl font-bold mb-4">সাধারণ সম্পাদক (১টি)</h3>
+        <ul class="grid grid-cols-2 gap-6 my-4">
+            {% for block_num in range(5, 7) %}
+                <li class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="py-2 text-center rounded-t-md text-xl font-bold border px-2">ব্যালট নং {{ block_num }}</h3>
+                    <img src="{{ url_for('static', filename='icons/' + symbols[block_num]) }}" alt="Icon" class="w-36 h-36 mx-auto my-2">
+                    <h2 class="py-2 text-3xl text-green-500 text-center font-bold px-2">{{ black_counts[block_num] }}</h2>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+   </section>
+    </main>
+
+    <h1 class="text-3xl font-bold my-4">Processed Images</h1>
+    <!-- Image Grid -->
     <ul class="grid grid-cols-4 gap-4 mb-6">
         {% for image in images %}
             <li class="relative bg-white p-4 rounded-lg shadow">
                 <!-- Count label at the top of the image -->
-                <span class="absolute top-2 left-2 bg-blue-500 text-white text-xl font-bold px-10 py-10 rounded-full z-10">
+                <span class="absolute top-2 right-2 bg-blue-500 text-white text-4xl font-bold px-6 p-4 rounded-full z-10">
                     {{ loop.index }}
                 </span>
                 <img src="{{ url_for('serve_image', filename=image) }}" alt="{{ image }}" class="max-w-full rounded mt-2">
             </li>
         {% endfor %}
     </ul>
-
-    <!-- <h2 class="text-2xl font-bold mb-4">CSV Classification Results</h2>
-    <table class="min-w-full bg-white border border-gray-200">
-        <thead>
-            <tr>
-                <th class="py-2 border-b text-left">Image Name</th>
-                <th class="py-2 border-b text-left">Block Number</th>
-                <th class="py-2 border-b text-left">Classification</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in csv_data %}
-                <tr>
-                    <td class="py-2 border-b">{{ row[0] }}</td>
-                    <td class="py-2 border-b">{{ row[1] }}</td>
-                    <td class="py-2 border-b">{{ row[2] }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table> -->
-
-   
 </body>
 </html>
