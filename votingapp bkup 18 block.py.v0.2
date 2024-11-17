@@ -67,7 +67,7 @@ def results():
 
     # Read the CSV file and store the data
     csv_data = []
-    csv_path = 'block_classification_results.csv'
+    csv_path = 'vote_results.csv'
     
     with open(csv_path, 'r') as csvfile:
         reader = csv.reader(csvfile)
@@ -101,7 +101,7 @@ def results():
 #     margin_right = 90
 #     threshold_value = 250
 
-#     csv_path = 'block_classification_results.csv'
+#     csv_path = 'vote_results.csv'
 #     with open(csv_path, 'a', newline='') as csvfile:
 #         writer = csv.writer(csvfile)
 #         writer.writerow(['Image Name', 'Block Number', 'Classification'])
@@ -154,7 +154,7 @@ def process_image(image_path):
     margin_right = 90
     threshold_value = 250
 
-    csv_path = 'block_classification_results.csv'
+    csv_path = 'vote_results.csv'
     with open(csv_path, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['Image Name', 'Block Number', 'Classification'])
