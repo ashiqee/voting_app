@@ -8,9 +8,25 @@
 </head>
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
     <h1 class="text-3xl font-bold mb-4">Upload Images for Processing</h1>
+    
+    <!-- Display alert if some files were already processed -->
+    {% if already_processed %}
+        <div class="bg-yellow-500 text-white p-4 rounded-lg mb-4">
+            <strong>Alert:</strong> The following images have already been processed:
+            <ul>
+                {% for image in already_processed %}
+                    <li>{{ image }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
     <form action="/upload" method="post" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow">
         <input type="file" name="files" multiple required class="mb-4">
         <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Upload</button>
     </form>
+
+    
+    <a href="/results" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Show Results</a>
 </body>
 </html>

@@ -70,7 +70,7 @@
         {% for image in images %}
             <li class="relative bg-white p-4 rounded-lg shadow">
                 <!-- Count label at the top of the image -->
-                <span class="absolute top-2 right-2 bg-blue-500 text-white text-4xl font-bold px-6 p-4 rounded-full z-10">
+                <span class="absolute top-2 right-2 bg-blue-500 text-white text-3xl font-bold px-4 p-2 rounded-full z-10">
                     {{ loop.index }}
                 </span>
                 <img src="{{ url_for('serve_image', filename=image) }}" alt="{{ image }}" class="max-w-full rounded mt-2">
